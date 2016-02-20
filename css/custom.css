@@ -1,0 +1,83 @@
+
+html,body{
+	margin:0;
+	padding:0;
+}
+
+body{
+	background: #333333;
+	color: #ffffff;
+}
+
+.line{
+	border-top: 1px solid white;
+}
+
+.line.left{
+	margin-left: 100px;
+}
+
+.line.right{
+	margin-right: 100px;
+}
+
+
+label{
+	padding-right: 20px;
+}
+
+
+select{
+	color: black;
+	padding: 3px;
+}
+
+input[type=submit]{
+	background: #ffffff;
+	border: 0;
+	padding: 10px 90px;
+	color: #333333;
+}
+
+ .icons{
+	height: 47px;
+	width: 47px;
+	background: url("../img/icons.png") 0 0 no-repeat;
+ }
+ .icons.cash{
+ 	background-position: 0px -100px;
+ }
+ .icons.bit{
+ 	background-position: 0px -50px;
+ }
+ .icons.clock{
+ 	background-position: 0px -150px;
+ }
+
+ .row{
+ 	margin-bottom: 10px;
+    margin-top: 10px;
+ }
+
+ .footerNav{
+	margin: 0 auto;
+	width: 200px;
+ }
+ nav{
+ 	overflow: hidden;
+ 	list-style: none;
+ }
+ nav li{
+	border-right: 1px solid #ffffff;
+	float: left;
+	padding-right: 10px;
+	padding-left: 10px;
+ }
+ nav li:last-child{
+ 	border:0;
+ }
+
+ .state,
+ .message{
+ 	text-align: center;
+ }
