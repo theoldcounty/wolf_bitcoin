@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Backbone Js betting app</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/json2/20150503/json2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js"></script>
+
+    
+  </head>
+
+  <body>
+
+    <p>//Value of Bitcoin :: <b id="bitvalue">323</b></p>
+    <p>//User chips :: <b id="bankvalue">100</b></p>
+
+    <p>//Timer
+      <div id="timer"></div>
+    </p>
+
+    <p>Will the value of bitcoin be higher or lower?</p>
+
+    <form id="wager-form">
+      <label>Wager</label>
+      <input type="text" name="wager" value="100"> Wager
+
+      <label>Higher or Lower</label>
+      <input type="radio" name="bet" value="high" checked> High |
+      <input type="radio" name="bet" value="low"> Low
+
+      <input type="submit" name="submit" value="submit">
+    </form>
+
+
+    <script src="js/custom.js"></script>
+   </body>
+</html>

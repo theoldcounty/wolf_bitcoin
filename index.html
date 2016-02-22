@@ -7,6 +7,12 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Bootstrap 101 Template</title>
 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/json2/20150503/json2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js"></script>
+
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -39,13 +45,13 @@
 			<div class="row">
 				<div class="col-md-1 col-sm-1 hidden-xs-down"></div>
 				<div class="col-md-2 col-sm-3 col-xs-3"><div class="icons cash"></div></div>
-				<div class="col-md-9 col-sm-8 col-xs-8"><span id="userBank">$100</span><br/> Your virtual bank</div>
+				<div class="col-md-9 col-sm-8 col-xs-8"><span id="bankvalue">$100</span><br/> Your virtual bank</div>
 			</div>
 
 			<div class="row">
 				<div class="col-md-1 col-sm-1 hidden-xs-down"></div>
 				<div class="col-md-2 col-sm-3 col-xs-3"><div class="icons bit"></div></div>
-				<div class="col-md-9 col-sm-8 col-xs-8"><span id="bitcoinValue">$100</span><br/> Current price of a Bitcoin</div>
+				<div class="col-md-9 col-sm-8 col-xs-8"><span id="bitvalue">$100</span><br/> Current price of a Bitcoin</div>
 			</div>
 
 			<div class="row">
@@ -61,21 +67,21 @@
 				<div class="col-md-2 col-sm-3 col-xs-3"><div class="icons"></div></div>
 				<div class="col-md-9 col-sm-8 col-xs-8">
 					
-					<form>
+					<form id="wager-form">
 						<fieldset>
-							<label>Bet</label> 
-							<select name="bet" >
-								<option value="volvo">Volvo</option>
-								<option value="saab">Saab</option>
-								<option value="opel">Opel</option>
-								<option value="audi">Audi</option>
+							<label>Wager</label> 
+							<select name="wager" >
+								<option value="100">100</option>
+								<option value="200">200</option>
+								<option value="300">300</option>
+								<option value="400">400</option>
 							</select>
 						</fieldset>
 
 						<fieldset>
-							<label>Wager</label>
-							<input type="radio" name="bet" value="higher" checked> Higher
-							<input type="radio" name="bet" value="lower"> Lower<br>
+							<label>Bet</label>
+							<input type="radio" name="bet" value="high" checked> High
+							<input type="radio" name="bet" value="low"> Low<br>
 						</fieldset>
 
 						<input type="submit" name="submit" value="Place bet!">
@@ -96,9 +102,6 @@
 		<!--container-->
 		</div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="js/custom.js"></script>
   </body>
 </html>
