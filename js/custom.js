@@ -4,7 +4,7 @@
   //UserBankModel
   var UserBankModel = Backbone.Model.extend({
     defaults: {
-      chips: 200
+      chips: 100
     },
     initialize: function() {
       console.log("UserBankModel initialize");
@@ -41,27 +41,20 @@
         console.log("Changed my currentValue to " + currentValue);
       });
     },
-    getBitcoinValue: function(callback) {
-     
-      /*
+    getBitcoinValue: function(callback) {     
+        function onSuccess(json){
+          callback((json.bid + json.ask) / 2);
+        }
+
         Backbone.ajax({
           dataType: 'json',
           url: "https://api.bitcoinaverage.com/ticker/USD",
           crossDomain: true,
-          success: function(data) {
-            callback(data);
-          }
+          success: onSuccess
         });
-      */
-
-      json= {
-        bid: 320,
-        ask: 444
-      };
-
-      var mediumValue = (json.bid + json.ask) / 2;
-
-      callback(mediumValue);
+          
+        //using dummy json if service is down.
+        //onSuccess({bid: 320,ask: 444});
     }
   });
 
@@ -77,6 +70,18 @@
   });
 
    
+
+  //GameView
+  var GameView = Backbone.View.extend({
+    initialize: function() {
+     console.log("GameView initialize");
+      this.render("default.jpg", "'You will only be sorry you didn’t buy more'");
+    },
+    render: function(img, message) {
+       this.$el.find('.state img').attr("src", "img/"+img);
+       this.$el.find('.message').html(message);
+    }
+  });
 
 
 
@@ -94,7 +99,11 @@
         el: $("#bitvalue")
       });
 
-      //setInterval(function() {
+      this.gameView = new GameView({
+        el: $("#gamestate")
+      });      
+
+      setInterval(function() {
         //get val of bitcoin every second
         that.bitcoinModel.getBitcoinValue(function(mediumVal) {
           
@@ -106,7 +115,7 @@
           //render the bit coin value
           that.bitcoinView.render(that.bitcoinModel.get("currentValue"));
         });
-      //}, 1000);
+      }, 1000);
 
 
       //render users chips
@@ -122,9 +131,10 @@
       var stashValue = this.bitcoinModel.get("currentValue");
 
       //set bit coin model with locked value
+      
       this.bitcoinModel.set({
         lockedValue: stashValue
-      });  
+      });
 
       var initialTimer = 5;
 
@@ -159,12 +169,18 @@
 
       var result = "loss";//lose by default
 
+      var resultImg = "lost.jpg";
+      var resultMsg = "You lose";
+
+
       //locked value was higher
       if (
-        this.lockedValue > this.currentValue && this.state["bet"] == "high" ||
-        this.lockedValue < this.currentValue && this.state["bet"] == "low"
+        (lockedValue > currentValue) && (this.state["bet"] == "low") ||
+        (lockedValue < currentValue) && (this.state["bet"] == "high")
       ) {
         result = "win";//win if conditions are met
+        resultImg = "won.jpg";
+        resultMsg = "You won";
       }
 
       //get current value of user chips
@@ -185,6 +201,9 @@
 
       //render new user chips
       this.userBankView.render(this.userBankModel.get("chips"));
+
+      //render game state
+      this.gameView.render(resultImg, resultMsg);
     }
   });
 
@@ -204,7 +223,7 @@
       e.preventDefault();
 
       var obj = [];
-      this.$el.find('select[name], input[name]').each(function() {
+      this.$el.find('select[name], input[type="radio"]:checked').each(function() {
           obj[this.name] = this.value;
       });
 
