@@ -1,83 +1,178 @@
-
-html,body{
-	margin:0;
-	padding:0;
-}
-
-body{
-	background: #333333;
-	color: #ffffff;
-}
-
-.line{
-	border-top: 1px solid white;
-}
-
-.line.left{
-	margin-left: 100px;
-}
-
-.line.right{
-	margin-right: 100px;
-}
+	html {
+	  margin: 0;
+	  padding: 0;
+	}
+	body {
+		font-family: 'Open Sans', serif;	
+	  background: #333333;
+	  color: #ffffff;
+	  margin: 0;
+	  padding: 0;
+	}
 
 
-label{
-	padding-right: 20px;
-}
+	h1{
+		font-size: 16px;
+		margin: 0;
+	}
+	h2{
+		font-size: 14px;
+		margin: 0;
+	}
+	h3{
+		font-size: 13px;
+		margin: 0;
+	}
 
 
-select{
-	color: black;
-	padding: 3px;
-}
+	a{
+		color: #ffffff;
+	}
+	a:hover{
+		color: #fff000;
+	}
 
-input[type=submit]{
-	background: #ffffff;
-	border: 0;
-	padding: 10px 90px;
-	color: #333333;
-}
+	header{
+		text-align: center;
+	}
 
- .icons{
-	height: 47px;
-	width: 47px;
-	background: url("../img/icons.png") 0 0 no-repeat;
- }
- .icons.cash{
- 	background-position: 0px -100px;
- }
- .icons.bit{
- 	background-position: 0px -50px;
- }
- .icons.clock{
- 	background-position: 0px -150px;
- }
 
- .row{
- 	margin-bottom: 10px;
-    margin-top: 10px;
- }
+	#logo{
+		background: url("../img/logo.jpg") 0 0 no-repeat;
+		height: 155px;
+	    width: 351px;
+	    margin-left: auto;
+	    margin-right: auto;
+	}
 
- .footerNav{
-	margin: 0 auto;
-	width: 200px;
- }
- nav{
- 	overflow: hidden;
- 	list-style: none;
- }
- nav li{
-	border-right: 1px solid #ffffff;
-	float: left;
-	padding-right: 10px;
-	padding-left: 10px;
- }
- nav li:last-child{
- 	border:0;
- }
+	#oldcountylogo{
+		background: url("../img/oldcounty.png") 0 0 no-repeat;
+		height: 150px;
+	    width: 150px;
+	    margin-left: auto;
+	    margin-right: auto;						
+	}
+	.line {
+	  border-top: 1px solid white;
+	}
+	.line.left {
+	  margin-left: 100px;
+	}
+	.line.right {
+	  margin-right: 100px;
+	}
 
- .state,
- .message{
- 	text-align: center;
- }
+	.row {
+	  margin-bottom: 10px;
+	  margin-top: 10px;
+	}
+	.footerNav {
+	  margin: 0 auto;
+	  width: 200px;
+	}
+	nav {
+	  list-style: none;
+	  overflow: hidden;
+	}
+	nav a {
+	  border-right: 1px solid #ffffff;
+	  float: left;
+	  padding-left: 10px;
+	  padding-right: 10px;
+	}
+	nav a:last-child {
+	  border: 0;
+	}
+	.state {
+	  text-align: center;
+	}
+	.message {
+	  text-align: center;
+	}
+
+	.gamewrapper{
+		background: #a9a9a9;
+		padding: 15px;
+	}
+	.pane{
+		background: #6d6d6d;
+		padding: 15px;
+	}
+
+	.icons{
+		margin:0;
+		padding:0;
+		list-style:none;
+	}
+
+	.icons li{
+		background: url("../img/icons.png") 0 0 no-repeat;
+		padding-left: 50px;
+		padding-bottom: 13px;
+		padding-top: 13px;
+	}
+	.icons li.cash {
+	  background-position: 0px -100px;
+	}
+	.icons li.bit {
+	  background-position: 0px -50px;
+	}
+	.icons li.clock {
+	  background-position: 0px -150px;
+	}
+
+	.dashboard{
+		position: relative;
+		border-bottom: 1px solid #000000;
+		border-top: 1px solid #000000;
+		margin-top: 15px;
+		padding-top: 15px;
+		padding-bottom: 15px;
+	}
+	.countdown{
+		right: 0;
+		position: absolute;
+		top: 15px;
+	}
+
+	.countdown .val{
+		background: #333333;
+		border-radius: 40px;
+		height: 44px;
+		width: 44px;
+		text-align: center;
+		padding-top: 12px;
+	}
+
+	#wager-form{
+	    padding-top: 15px;
+	}
+
+	fieldset{
+		background: #333333;
+		padding: 7px;
+		width: 180px;
+		float: left;
+		margin-right: 20px;
+	}
+
+	label {
+	  padding-right: 20px;
+	}
+	select {
+	  color: black;
+	  padding: 3px;
+	}
+	input[type=submit] {
+	  background: #ffffff;
+	  border: 0;
+	  color: #333333;
+	  padding: 10px 30px;
+	}
+
+
+	@media screen and (max-width: 600px) {
+	    #gamestate .picture{
+	    	width: 100%;
+	    }
+	}

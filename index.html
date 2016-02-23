@@ -5,8 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
-
+    <title>The Wolf Of Wall Street :: The Old County Betting app</title>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/json2/20150503/json2.min.js"></script>
@@ -17,6 +16,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!--custom css-->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans">
     <link href="css/custom.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -28,80 +28,95 @@
   </head>
   <body>
 
-		<div class="container">
-		<!--container-->
+		<div class="container">	
 
-	    	<img src="img/logo.jpg"/>
+				<header>
+				    <div id="logo"></div>
 
-			<p>Play the bitcon value challenge. Make a wager if the value will go up or down in the next minute. Place a bet and the minute count-down will begin.</p>
+					<p>Play the bitcon value challenge. Make a wager if the value will go up or down in the next minute. Place a bet and the minute count-down will begin.</p>
+				</header>
 
-			<div id="gamestate">
-				<div class="state"><img src="img/default.jpg"/></div>
-				<div class="message">"You will only be sorry you didn’t buy more"</div>
-			</div>
+				<div class="gamewrapper">
+					<div class="row">
+						<div class="col-md-8">
 
-			<div class="line left"></div>
+							<div class="pane">
+								
+								<div class="row">
+									<div id="gamestate" class="col-md-9">
+										<img class="picture" src="img/default.jpg"/>
+										<div class="message">"You will only be sorry you didn’t buy more"</div>
+									</div>
+									<div class="col-md-3">
+										<div id="oldcountylogo"></div>
+									</div>	
+								</div>
+							
+								<div class="dashboard">
+									<ul class="icons">
+										<li class="cash">$<span id="bankvalue">100</span> (your bank)</li>
+										<li class="bit">$<span id="bitvalue">100</span> (current bitcoin value)</li>
+										<li class="bit">$<span id="oldbitvalue">100</span> (old bitcoin value)</li>
+									</ul>
 
-			<div class="row">
-				<div class="col-md-1 col-sm-1 hidden-xs-down"></div>
-				<div class="col-md-2 col-sm-3 col-xs-3"><div class="icons cash"></div></div>
-				<div class="col-md-9 col-sm-8 col-xs-8"><span id="bankvalue">$100</span><br/> Your virtual bank</div>
-			</div>
+									<div class="countdown">
+										<div id="timer" class="val">20</div>
+										<h3>Timer</h3>
+									</div>
+								</div>
+								
+								<form id="wager-form">
+									<p>Place a wager and wait until the timer counts to zero.</p>
 
-			<div class="row">
-				<div class="col-md-1 col-sm-1 hidden-xs-down"></div>
-				<div class="col-md-2 col-sm-3 col-xs-3"><div class="icons bit"></div></div>
-				<div class="col-md-9 col-sm-8 col-xs-8"><span id="bitvalue">$100</span><br/> Current price of a Bitcoin</div>
-			</div>
+									<fieldset>
+										<label>Wager</label> 
+										<select name="wager" >
+											<option value="100">100</option>
+											<option value="200">200</option>
+											<option value="300">300</option>
+											<option value="400">400</option>
+										</select>
+									</fieldset>
 
-			<div class="row">
-				<div class="col-md-1 col-sm-1 hidden-xs-down"></div>
-				<div class="col-md-2 col-sm-3 col-xs-3"><div class="icons clock"></div></div>
-				<div class="col-md-9 col-sm-8 col-xs-8"><span id="timer">60</div>
-			</div>
+									<fieldset>
+										<label>Bet</label>
+										<input type="radio" name="bet" value="high" checked> High
+										<input type="radio" name="bet" value="low"> Low<br>
+									</fieldset>
 
-			<div class="line right"></div>
+									<input type="submit" name="submit" value="Place bet!">
+								</form>
 
-			<div class="row">
-				<div class="col-md-1 col-sm-1 hidden-xs-down"></div>
-				<div class="col-md-2 col-sm-3 col-xs-3"><div class="icons"></div></div>
-				<div class="col-md-9 col-sm-8 col-xs-8">
-					
-					<form id="wager-form">
-						<fieldset>
-							<label>Wager</label> 
-							<select name="wager" >
-								<option value="100">100</option>
-								<option value="200">200</option>
-								<option value="300">300</option>
-								<option value="400">400</option>
-							</select>
-						</fieldset>
+							</div>
 
-						<fieldset>
-							<label>Bet</label>
-							<input type="radio" name="bet" value="high" checked> High
-							<input type="radio" name="bet" value="low"> Low<br>
-						</fieldset>
+						</div>
+						<div class="col-md-4">
+							<div class="pane">
+								<h3>Your betting history</h3>
 
-						<input type="submit" name="submit" value="Place bet!">
-					</form>
-
+								<ul>
+									<li>+200 win (2 mins ago)</li>
+									<li>-200 lost (1 mins ago)</li>
+									<li>+500 win (20 secs ago)</li>
+								</ul>
+							</div>
+						</div>
+					</div>
 				</div>
-			</div>
 
-			<div class="line left"></div>
-
-			<div class="footerNav">
-				<nav>
-					<li>Terms</li>
-					<li>Privacy</li>
-				</nav>
-			</div>
-
-		<!--container-->
+				<footer>
+					<nav class="footerNav">
+						<a>Terms</a>
+						<a>Privacy</a>
+					</nav>
+				</footer>
+			
 		</div>
 
-    <script src="js/custom.js"></script>
+	<script src="js/UserBank.js"></script>
+	<script src="js/Bitcoin.js"></script>
+	<script src="js/Game.js"></script>
+	<script src="js/Form.js"></script>
+    <script src="js/App.js"></script>
   </body>
 </html>
