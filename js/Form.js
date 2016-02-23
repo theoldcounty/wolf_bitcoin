@@ -5,7 +5,6 @@
       "submit": "doMethod"
     },
     doMethod: function(e) {
-
       e.preventDefault();
 
       var obj = [];
@@ -18,7 +17,6 @@
         //start bet
         app.startBet(obj);
       }
-
     }
   });
 

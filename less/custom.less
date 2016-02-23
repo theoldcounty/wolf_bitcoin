@@ -1,52 +1,64 @@
 // Color variables (appears count calculates by raw css)
-@color0: #ffffff; // Appears 3 times
-@color1: #333333; // Appears 2 times
-@color2: #fff000; // Appears 2 times
+@color0: #333333; // Appears 4 times
+@color1: #ffffff; // Appears 4 times
+@color2: #000000; // Appears 2 times
 
 
 html {
-	margin:0;
-	padding:0;
+	margin: 0;
+	padding: 0;
 }
 body {
-	background: @color1;
-	color: @color0;
-	margin:0;
-	padding:0;
+	background: @color0;
+	color: @color1;
+	font-family: 'Open Sans', serif;
+	margin: 0;
+	padding: 0;
 }
-#logo{
+h1 {
+	font-size: 16px;
+	margin: 0;
+}
+h2 {
+	font-size: 14px;
+	margin: 0;
+}
+h3 {
+	font-size: 13px;
+	margin: 0;
+}
+a {
+	color: @color1;
+	&:hover {
+		color: #fff000;
+	}
+}
+header {
+	text-align: center;
+}
+#logo {
 	background: url("../img/logo.jpg") 0 0 no-repeat;
 	height: 155px;
-    width: 351px;
-    margin-left: auto;
-    margin-right: auto;
+	margin-left: auto;
+	margin-right: auto;
+	width: 351px;
+}
+#oldcountylogo {
+	background: url("../img/oldcounty.png") 0 0 no-repeat;
+	height: 150px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 150px;
 }
 .line {
 	border-top: 1px solid white;
-
-	&.left {
-		margin-left: 100px;
-	}
-	&.right {
-		margin-right: 100px;
-	}
 }
-
-label {
-	padding-right: 20px;
+.line.left {
+	margin-left: 100px;
 }
-select {
-	color: black;
-	padding: 3px;
+.line.right {
+	margin-right: 100px;
 }
-input[type=submit] {
-	background: @color0;
-	border: 0;
-	color: @color1;
-	padding: 10px 90px;
-}
-
-
 .row {
 	margin-bottom: 10px;
 	margin-top: 10px;
@@ -59,12 +71,12 @@ nav {
 	list-style: none;
 	overflow: hidden;
 	a {
-		border-right: 1px solid @color0;
+		border-right: 1px solid @color1;
 		float: left;
 		padding-left: 10px;
 		padding-right: 10px;
 		&:last-child {
-			border:0;
+			border: 0;
 		}
 	}
 }
@@ -74,10 +86,81 @@ nav {
 .message {
 	text-align: center;
 }
-
-a{
-	color: @color0;
-	&:hover{
-		color: @color2;
+.gamewrapper {
+	background: #a9a9a9;
+	padding: 15px;
+}
+.pane {
+	background: #6d6d6d;
+	padding: 15px;
+}
+.icons {
+	list-style:none;
+	margin:0;
+	padding:0;
+	li {
+		background: url("../img/icons.png") 0 0 no-repeat;
+		padding-bottom: 13px;
+		padding-left: 50px;
+		padding-top: 13px;
 	}
+	li.cash {
+		background-position: 0px -100px;
+	}
+	li.bit {
+		background-position: 0px -50px;
+	}
+	li.clock {
+		background-position: 0px -150px;
+	}
+}
+.dashboard {
+	border-bottom: 1px solid @color2;
+	border-top: 1px solid @color2;
+	margin-top: 15px;
+	padding-bottom: 15px;
+	padding-top: 15px;
+	position: relative;
+}
+.countdown {
+	position: absolute;
+	right: 0;
+	top: 15px;
+	.val {
+		background: @color0;
+		border-radius: 40px;
+		height: 44px;
+		padding-top: 12px;
+		text-align: center;
+		width: 44px;
+	}
+}
+#wager-form {
+	padding-top: 15px;
+}
+fieldset {
+	background: @color0;
+	float: left;
+	margin-right: 20px;
+	padding: 7px;
+	width: 180px;
+}
+label {
+	padding-right: 20px;
+}
+select {
+	color: black;
+	padding: 3px;
+}
+input[type=submit] {
+	background: @color1;
+	border: 0;
+	color: @color0;
+	padding: 10px 30px;
+}
+	
+@media screen and (max-width: 600px) {
+    #gamestate .picture{
+    	width: 100%;
+    }
 }

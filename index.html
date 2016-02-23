@@ -28,90 +28,87 @@
   </head>
   <body>
 
-		<div class="container">	
+	<div class="container">	
+		<header>
+		    <div id="logo"></div>
 
-				<header>
-				    <div id="logo"></div>
+			<p>Play the bitcon value challenge. Make a wager if the value will go up or down in the next minute. Place a bet and the minute count-down will begin.</p>
+		</header>
 
-					<p>Play the bitcon value challenge. Make a wager if the value will go up or down in the next minute. Place a bet and the minute count-down will begin.</p>
-				</header>
-
-				<div class="gamewrapper">
-					<div class="row">
-						<div class="col-md-8">
-
-							<div class="pane">
-								
-								<div class="row">
-									<div id="gamestate" class="col-md-9">
-										<img class="picture" src="img/default.jpg"/>
-										<div class="message">"You will only be sorry you didn’t buy more"</div>
-									</div>
-									<div class="col-md-3">
-										<div id="oldcountylogo"></div>
-									</div>	
-								</div>
-							
-								<div class="dashboard">
-									<ul class="icons">
-										<li class="cash">$<span id="bankvalue">100</span> (your bank)</li>
-										<li class="bit">$<span id="bitvalue">100</span> (current bitcoin value)</li>
-										<li class="bit">$<span id="oldbitvalue">100</span> (old bitcoin value)</li>
-									</ul>
-
-									<div class="countdown">
-										<div id="timer" class="val">20</div>
-										<h3>Timer</h3>
-									</div>
-								</div>
-								
-								<form id="wager-form">
-									<p>Place a wager and wait until the timer counts to zero.</p>
-
-									<fieldset>
-										<label>Wager</label> 
-										<select name="wager" >
-											<option value="100">100</option>
-											<option value="200">200</option>
-											<option value="300">300</option>
-											<option value="400">400</option>
-										</select>
-									</fieldset>
-
-									<fieldset>
-										<label>Bet</label>
-										<input type="radio" name="bet" value="high" checked> High
-										<input type="radio" name="bet" value="low"> Low<br>
-									</fieldset>
-
-									<input type="submit" name="submit" value="Place bet!">
-								</form>
-
+		<div class="gamewrapper">
+			<div class="row">
+				<div class="col-md-8">
+					<div class="pane">
+						
+						<div class="row">
+							<div id="gamestate" class="col-md-9">
+								<img class="picture" src="img/default.jpg"/>
+								<div class="message">"You will only be sorry you didn’t buy more"</div>
 							</div>
-
+							<div class="col-md-3">
+								<div id="oldcountylogo"></div>
+							</div>	
 						</div>
-						<div class="col-md-4">
-							<div class="pane">
-								<h3>Your betting history</h3>
+					
+						<div class="dashboard">
+							<ul class="icons">
+								<li class="cash">$<span id="bankvalue">100</span> (your bank)</li>
+							</ul>
+							<ul id="bitvalue" class="icons">
+								<li class="bit">$<span class="current">100</span> (current bitcoin value)</li>
+								<li class="bit">$<span class="old">100</span> (old bitcoin value)</li>
+							</ul>
 
-								<ul>
-									<li>+200 win (2 mins ago)</li>
-									<li>-200 lost (1 mins ago)</li>
-									<li>+500 win (20 secs ago)</li>
-								</ul>
+							<div class="countdown">
+								<div id="timer" class="val">20</div>
+								<h3>Timer</h3>
 							</div>
 						</div>
+						
+						<form id="wager-form">
+							<p>Place a wager and wait until the timer counts to zero.</p>
+
+							<fieldset>
+								<label>Wager</label> 
+								<select name="wager" >
+									<option value="100">100</option>
+									<option value="200">200</option>
+									<option value="300">300</option>
+									<option value="400">400</option>
+								</select>
+							</fieldset>
+
+							<fieldset>
+								<label>Bet</label>
+								<input type="radio" name="bet" value="high" checked> High
+								<input type="radio" name="bet" value="low"> Low<br>
+							</fieldset>
+
+							<input type="submit" name="submit" value="Place bet!">
+						</form>
 					</div>
 				</div>
+				<div class="col-md-4">
+					<div class="pane">
+						<h3>Your betting history</h3>
 
-				<footer>
-					<nav class="footerNav">
-						<a>Terms</a>
-						<a>Privacy</a>
-					</nav>
-				</footer>
-			
+						<ul>
+							<li>+200 win (2 mins ago)</li>
+							<li>-200 lost (1 mins ago)</li>
+							<li>+500 win (20 secs ago)</li>
+						</ul>
+					</div>
+				</div>
+			</div>
 		</div>
+
+		<footer>
+			<nav class="footerNav">
+				<a>Terms</a>
+				<a>Privacy</a>
+			</nav>
+		</footer>		
+	</div>
 
 	<script src="js/UserBank.js"></script>
 	<script src="js/Bitcoin.js"></script>

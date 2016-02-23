@@ -45,16 +45,15 @@
     }
   });
 
- 
-
   //BitcoinView
   var BitcoinView = Backbone.View.extend({
     initialize: function() {
      console.log("BitcoinView initialize", this.model);
      this.model.on('change', this.render, this);
-      //this.render();
     },
     render: function(value) {
-       this.$el.html(value);
+      console.log("value", value);
+       this.$el.find('.current').html(this.model.get("currentValue"));
+       this.$el.find('.old').html(this.model.get("lockedValue"));
     }
   });

@@ -23,6 +23,7 @@
 
       //render users chips
       this.userBankView.render(this.userBankModel.get("chips"));
+
     },
     currentBitcoinValue: 0,
     startBet: function(state) {
