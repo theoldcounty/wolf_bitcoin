@@ -17,6 +17,12 @@
         model: this.bitcoinModel
       });
 
+      this.betHistoryModel = new BetHistoryModel();
+      this.betHistoryView = new BetHistoryView({
+        el: $("#bethistory"),
+        model: this.betHistoryModel
+      });      
+
       this.gameView = new GameView({
         el: $("#gamestate")
       });      
@@ -99,6 +105,20 @@
       this.userBankModel.set({
         chips: newVal
       });
+
+
+      //store history
+
+      var latestResult = {
+        "result": parseInt(this.state["wager"], 10)+" "+result
+      };
+
+      this.betHistoryModel.update(latestResult);
+      console.log("latestResult", latestResult);
+
+
+      //render history
+      this.betHistoryView.render(this.betHistoryModel.get("history"));
 
       //render new user chips
       this.userBankView.render(this.userBankModel.get("chips"));

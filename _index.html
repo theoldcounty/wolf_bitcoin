@@ -13,32 +13,86 @@
 
   <body>
 
-    <div id="gamestate">
-      <div class="state"><img src="img/default.jpg"/></div>
-      <div class="message">"You will only be sorry you didn’t buy more"</div>
+    <div class="container"> 
+      
+
+      <div class="gamewrapper">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="pane">
+              
+              <div class="row">
+                <div id="gamestate" class="col-md-9">
+                  <img class="picture" src="img/default.jpg"/>
+                  <div class="message">"You will only be sorry you didn’t buy more"</div>
+                </div>
+                <div class="col-md-3">
+                  <div id="oldcountylogo"></div>
+                </div>  
+              </div>
+            
+              <div class="dashboard">
+                <ul class="icons">
+                  <li class="cash">$<span id="bankvalue">100</span> (your bank)</li>
+                </ul>
+                <ul id="bitvalue" class="icons">
+                  <li class="bit">$<span class="current">100</span> (current bitcoin value)</li>
+                  <li class="bit">$<span class="old">100</span> (old bitcoin value)</li>
+                </ul>
+
+                <div class="countdown">
+                  <div id="timer" class="val">20</div>
+                  <h3>Timer</h3>
+                </div>
+              </div>
+              
+              <form id="wager-form">
+                <p>Place a wager and wait until the timer counts to zero.</p>
+
+                <fieldset>
+                  <label>Wager</label> 
+                  <select name="wager" >
+                    <option value="100">100</option>
+                    <option value="200">200</option>
+                    <option value="300">300</option>
+                    <option value="400">400</option>
+                  </select>
+                </fieldset>
+
+                <fieldset>
+                  <label>Bet</label>
+                  <input type="radio" name="bet" value="high" checked> High
+                  <input type="radio" name="bet" value="low"> Low<br>
+                </fieldset>
+
+                <input type="submit" name="submit" value="Place bet!">
+              </form>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="pane">
+              <h3>Review your betting history</h3>
+              <ol id="bethistory">
+                <li>No history</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <nav class="footerNav">
+          <a>Terms</a>
+          <a>Privacy</a>
+        </nav>
+      </footer>   
     </div>
-    
-    <p>//Value of Bitcoin :: <b id="bitvalue">323</b></p>
-    <p>//User chips :: <b id="bankvalue">100</b></p>
 
-    <p>//Timer
-      <div id="timer"></div>
-    </p>
-
-    <p>Will the value of bitcoin be higher or lower?</p>
-
-    <form id="wager-form">
-      <label>Wager</label>
-      <input type="text" name="wager" value="100"> Wager
-
-      <label>Higher or Lower</label>
-      <input type="radio" name="bet" value="high" checked> High |
-      <input type="radio" name="bet" value="low"> Low
-
-      <input type="submit" name="submit" value="submit">
-    </form>
-
-
-    <script src="js/custom.js"></script>
+    <script src="js/UserBank.js"></script>
+    <script src="js/Bitcoin.js"></script>
+    <script src="js/Game.js"></script>
+    <script src="js/BetHistory.js"></script>
+    <script src="js/Form.js"></script>
+    <script src="js/App.js"></script>
    </body>
 </html>
